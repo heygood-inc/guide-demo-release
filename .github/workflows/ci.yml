@@ -1,0 +1,31 @@
+name: P060 CI
+on:
+  push:
+    branches: [main, 'guide/**']
+permissions:
+  contents: read
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Fetch exact commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TARGET_SHA: ${{ github.sha }}
+        run: |
+          git init .
+          git remote add origin https://github.com/heygood-inc/guide-demo-release.git
+          AUTH=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
+          echo "::add-mask::$AUTH"
+          git -c http.extraheader="AUTHORIZATION: basic $AUTH" fetch --depth=1 origin "$TARGET_SHA"
+          git checkout --detach FETCH_HEAD
+      - name: Test and deterministic build
+        run: |
+          if grep -q FAIL_CI app.mjs; then exit 1; fi
+          node --check app.mjs
+          mkdir -p build
+          cp app.mjs build/app.mjs
+          DIGEST=$(sha256sum build/app.mjs | cut -d ' ' -f1)
+          echo "::notice file=app.mjs,line=1,title=P060_BUILD_SHA256::$DIGEST"
