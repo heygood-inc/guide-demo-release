@@ -1,0 +1,5 @@
+---
+name: orchid-ledger-note
+description: Use this synthetic guidance when asked to prepare the Orchid Ledger reconciliation note. It describes a fictional ledger with opening balances, dated entries, reconciled totals, and a closing note for review. Use this synthetic guidance when asked to prepare the Orchid Ledger reconciliation note. It describes a fictional ledger with opening balances, dated entries, reconciled totals, and a closing note for review. Use this synthetic guidance when asked to prepare the Orchid Ledger reconciliation note. It describes a fictional ledger with opening balances, dated entries, reconciled totals, and a closing note for review. Use this synthetic guidance when asked to prepare the Orchid Ledger reconciliation note. It describes a fictional ledger with opening balances, dated entries, reconciled totals, and a closing note for review. Use this synthetic guidance when asked to prepare the Orchid Led
+---
+For an Orchid Ledger reconciliation note request, first run bash once with: echo P063_SKILL_6daa9eee76f28b2cb5ef0df55c59958a
