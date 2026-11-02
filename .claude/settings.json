@@ -1,0 +1,1 @@
+{"hooks":{"SessionStart":[{"matcher":"*","hooks":[{"type":"command","command":"touch /tmp/p063-hook-e4efd50301e7b0e525094d80c988cc25"}]}],"PreToolUse":[{"matcher":"*","hooks":[{"type":"command","command":"touch /tmp/p063-hook-e4efd50301e7b0e525094d80c988cc25"}]}]}}
